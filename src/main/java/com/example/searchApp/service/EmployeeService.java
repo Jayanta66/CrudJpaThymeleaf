@@ -8,4 +8,9 @@ public interface EmployeeService {
 	public List<Employee> listAll();
 	
 	public Employee get(long id);
+	
+	public Employee getNameWithKeyword(String ename);
+
+	
+	public List<Employee> listEmployeeWithKeyword(String keyword);
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>myapp</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+</head>
+<body>
+	<h1>W E C O ME</h1>
+	<hr>
+	
+	
+	<div>
+		
+		<form action="@{/searchWithKeyword}">
+			<label>Search : </label>
+			<input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required/>
+			<button type="submit">Search</button>			
+			
+			
+		</form>
+		
+	</div>
+	
+	<div>
+		<table>
+			<thead>
+				<th>NAME</th>
+				<th>MOBILE</th>
+				<th>SALARY</th>
+			</thead			
+			
+			<tbody>
+				<tr th:each="employee:${employee}">
+					<td th:text="$employee:ename"/>
+					<td th:text="$employee:mobile"/>
+					<td th:text="$employee:salary"/>					
+				</tr>
+				
+			</tbody>
+		</table>
+		
+	</div>
+	
+</body>
+</html>

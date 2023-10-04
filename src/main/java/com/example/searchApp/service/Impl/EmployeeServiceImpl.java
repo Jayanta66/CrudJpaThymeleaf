@@ -27,4 +27,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	}
 
+	@Override
+	public List<Employee> listEmployeeWithKeyword(String keyword) {
+
+		if(keyword !=null) {
+			return repo.search(keyword);
+		}
+		
+		return repo.findAll();
+	}
+
+	@Override
+	public Employee getNameWithKeyword(String ename) {
+		return repo.findNameWithKeyword(ename).get();
+	}
+
 }
